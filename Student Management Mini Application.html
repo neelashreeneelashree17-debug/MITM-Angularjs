@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)file:///C:/Users/MIT/Desktop/Neela/index.html -->
+<html lang="en" ng-app="studentApp" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
+    <title>Student Management Mini Application</title>
+    <!-- Include AngularJS library reference (adjust path if needed) -->
+    <script src="./Student Management Mini Application_files/angular.min.js.download"></script>
+    </head>
+<body>
+
+    <!-- Parent CollegeController -->
+    <div class="container ng-scope" ng-controller="CollegeController">
+        <h2 class="ng-binding">Maharaja Institute of Technology - Student Management Portal</h2>
+        <hr>
+
+        <!-- Child StudentController -->
+        <div ng-controller="StudentController" class="ng-scope">
+            
+            <h3>Student Entry Form</h3>
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" ng-model="inputName" placeholder="Enter name" class="ng-valid ng-dirty ng-touched ng-empty">
+            </div>
+            <div class="form-group">
+                <label>Department:</label>
+                <input type="text" ng-model="inputDepartment" placeholder="Enter department" class="ng-valid ng-dirty ng-touched ng-empty">
+            </div>
+            <div class="form-group">
+                <label>Semester:</label>
+                <input type="text" ng-model="inputSemester" placeholder="Enter semester" class="ng-valid ng-dirty ng-touched ng-empty">
+            </div>
+            <div class="form-group">
+                <label>Marks:</label>
+                <input type="number" ng-model="inputMarks" placeholder="Enter marks" class="ng-valid ng-dirty ng-valid-parse ng-touched ng-not-empty">
+            </div>
+
+            <!-- Live Display of Entered Details -->
+            <h4>Live Preview:</h4>
+            <p class="ng-binding"><strong>Name:</strong> </p>
+            <p class="ng-binding"><strong>Department:</strong> </p>
+            <p class="ng-binding"><strong>Semester:</strong> </p>
+
+            <!-- Examination Result Section with ng-if and ng-class -->
+            <!-- ngIf: inputMarks !== undefined && inputMarks !== null --><div ng-if="inputMarks !== undefined &amp;&amp; inputMarks !== null" class="ng-scope">
+                <p><strong>Result Status:</strong> 
+                    <span ng-class="{'pass': inputMarks &gt;= 40, 'fail': inputMarks &lt; 40}" class="ng-binding pass">
+                        Pass
+                    </span>
+                </p>
+            </div><!-- end ngIf: inputMarks !== undefined && inputMarks !== null -->
+
+            <br>
+            <!-- Actions -->
+            <button ng-click="addStudent()">Add Student</button>
+            <button ng-click="toggleDetails()" class="ng-binding">Hide Details</button>
+
+            <!-- Show or Hide Student Details Section -->
+            <div ng-show="showDetails" class="">
+                <h3>Student List</h3>
+                <ul>
+                    <!-- ngRepeat: student in students --><li ng-repeat="student in students" class="ng-binding ng-scope">
+                        Mahalakshmi
+                    </li><!-- end ngRepeat: student in students --><li ng-repeat="student in students" class="ng-binding ng-scope">
+                        Neelashree
+                    </li><!-- end ngRepeat: student in students --><li ng-repeat="student in students" class="ng-binding ng-scope">
+                        Lakshmi
+                    </li><!-- end ngRepeat: student in students --><li ng-repeat="student in students" class="ng-binding ng-scope">
+                        Neelashree (ISE)
+                    </li><!-- end ngRepeat: student in students --><li ng-repeat="student in students" class="ng-binding ng-scope">
+                        Mahalakshmi (ISE)
+                    </li><!-- end ngRepeat: student in students --><li ng-repeat="student in students" class="ng-binding ng-scope">
+                        manvitha (ISE)
+                    </li><!-- end ngRepeat: student in students --><li ng-repeat="student in students" class="ng-binding ng-scope">
+                        lakshmi (ISE)
+                    </li><!-- end ngRepeat: student in students -->
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Link to app.js -->
+    <script src="./Student Management Mini Application_files/JS app.js"></script>
+
+
+</body></html>
